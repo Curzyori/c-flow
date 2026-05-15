@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Play, Pause, SkipForward, SkipBack, Music, Volume2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const API_BASE_URL = 'http://localhost:3004';
+const API_BASE_URL = '/api';
 
 const AudioPlayer = () => {
     const [tracks, setTracks] = useState([]);

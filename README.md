@@ -1,4 +1,4 @@
-# 🎧 C Flow (C-Flow-4)
+# 🎧 C Flow
 
 ![C Flow Dashboard](images/dashboard1.png)
 
@@ -45,8 +45,8 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Curzyori/C-Flow-4.git
-cd C-Flow-4
+git clone https://github.com/Curzyori/C-Flow.git
+cd C-Flow
 ```
 
 ### 2. Environment Setup
