@@ -5,7 +5,7 @@
       "src": "backend/server.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["music/**"]
+        "includeFiles": ["backend/music/**"]
       }
     },
     {

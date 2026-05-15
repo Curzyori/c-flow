@@ -5,8 +5,8 @@ const fs = require('fs');
 
 router.get('/:filename', (req, res) => {
     const filename = req.params.filename;
-    // On Vercel, files in includeFiles are accessible via process.cwd()
-    const filePath = path.join(process.cwd(), 'music', filename);
+    // __dirname is backend/routes/
+    const filePath = path.join(__dirname, '../music', filename);
 
     if (fs.existsSync(filePath)) {
         const stat = fs.statSync(filePath);
@@ -20,12 +20,18 @@ router.get('/:filename', (req, res) => {
     } else {
         console.error(`File not found: ${filePath}`);
         try {
-            const root = process.cwd();
+            const currentDir = __dirname;
             console.log('--- Vercel FS Debug ---');
-            console.log('CWD:', root);
-            console.log('Files in CWD:', fs.readdirSync(root));
-            if (fs.existsSync(path.join(root, 'music'))) {
-                console.log('Files in music:', fs.readdirSync(path.join(root, 'music')));
+            console.log('__dirname:', currentDir);
+            console.log('Files in __dirname:', fs.readdirSync(currentDir));
+            const parentDir = path.join(currentDir, '..');
+            console.log('Parent dir:', parentDir);
+            console.log('Files in parent:', fs.readdirSync(parentDir));
+            const musicDir = path.join(parentDir, 'music');
+            if (fs.existsSync(musicDir)) {
+                console.log('Files in music:', fs.readdirSync(musicDir));
+            } else {
+                console.log('Music dir does not exist at:', musicDir);
             }
             console.log('-----------------------');
         } catch (e) {

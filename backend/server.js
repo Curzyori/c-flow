@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 });
 
 // Static Assets
-const musicPath = path.join(process.cwd(), 'music');
+const musicPath = path.join(process.cwd(), 'backend/music');
 app.use('/music', express.static(musicPath));
 
 // API Routes - Handle both with and without /api prefix
