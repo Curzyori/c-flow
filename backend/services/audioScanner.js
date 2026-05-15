@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const scanMusicLibrary = async () => {
-    // Using direct static paths for Vercel stability
+    // Using CDN for guaranteed stability on Vercel
     return [
         {
             id: 'love_me_not',
@@ -11,7 +11,7 @@ const scanMusicLibrary = async () => {
             title: 'Love Me Not',
             artist: 'Ravyn Lenae',
             duration: 218,
-            url: '/audio/love_me_not.mp3'
+            url: 'https://cdn.jsdelivr.net/gh/Curzyori/C-Flow-4@vercel/frontend/public/audio/love_me_not.mp3'
         },
         {
             id: 'to_the_bone',
@@ -19,7 +19,7 @@ const scanMusicLibrary = async () => {
             title: 'To The Bone',
             artist: 'Pamungkas',
             duration: 353,
-            url: '/audio/to_the_bone.mp3'
+            url: 'https://cdn.jsdelivr.net/gh/Curzyori/C-Flow-4@vercel/frontend/public/audio/to_the_bone.mp3'
         }
     ];
 };
