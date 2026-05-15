@@ -22,17 +22,7 @@ app.use((req, res, next) => {
 });
 
 // Static Assets
-const musicPath = path.join(process.cwd(), 'music');
-console.log(`Checking music directory at: ${musicPath}`);
-try {
-    if (fs.existsSync(musicPath)) {
-        console.log(`Music directory exists. Files: ${fs.readdirSync(musicPath).join(', ')}`);
-    } else {
-        console.log('Music directory DOES NOT exist');
-    }
-} catch (e) {
-    console.log(`Error reading music dir: ${e.message}`);
-}
+const musicPath = path.join(process.cwd(), 'frontend/public/music');
 app.use('/music', express.static(musicPath));
 
 // API Routes - Handle both with and without /api prefix

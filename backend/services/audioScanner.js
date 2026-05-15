@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const mm = require('music-metadata');
 
-const MUSIC_DIR = path.join(process.cwd(), 'music');
+const MUSIC_DIR = path.join(process.cwd(), 'frontend/public/music');
 
 // Ensure the directory exists (might fail on Vercel, but we handle it)
 try {
