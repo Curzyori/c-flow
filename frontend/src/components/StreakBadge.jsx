@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Flame } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const API_BASE_URL = '/api';
+const API_BASE_URL = '';
 
 const StreakBadge = () => {
     const [streak, setStreak] = useState(0);
