@@ -218,7 +218,7 @@ const AudioPlayer = () => {
                         <div className="flex items-center justify-between mb-6 px-2">
                             <h3 className="text-xl font-bold text-white flex items-center gap-2">
                                 <Volume2 className="text-curzy-neon" />
-                                Music Library
+                                C Flow Library v2
                             </h3>
                             <span className="text-white/40 text-sm">{tracks.length} Tracks</span>
                         </div>

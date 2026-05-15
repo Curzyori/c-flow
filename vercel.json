@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "backend/server.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["frontend/public/music/**"]
-      }
+      "use": "@vercel/node"
     },
     {
       "src": "frontend/package.json",
@@ -16,11 +13,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "destination": "backend/server.js"
     },
     {
       "source": "/(.*)",
-      "destination": "/frontend/$1"
+      "destination": "frontend/$1"
     }
   ]
 }

@@ -27,6 +27,7 @@ app.use('/music', express.static(musicPath));
 
 // API Routes - Handle both with and without /api prefix
 const apiRouter = express.Router();
+apiRouter.get('/test', (req, res) => res.json({ success: true, message: 'Backend is active v2' }));
 apiRouter.use('/status', statusRoutes);
 apiRouter.use('/streak', streakRoutes);
 apiRouter.use('/', musicRoutes);
