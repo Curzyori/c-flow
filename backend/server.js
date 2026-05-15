@@ -12,9 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3004;
 
 // Middleware
-app.use(cors({
-    origin: 'http://localhost:5173'
-}));
+app.use(cors());
 app.use(express.json());
 
 // Static Assets
@@ -26,7 +24,5 @@ app.use('/api/status', statusRoutes);
 app.use('/api', musicRoutes);
 app.use('/api/streak', streakRoutes);
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`C-Flow-4 Server running on port ${PORT}`);
-});
+// Export for Vercel Serverless
+module.exports = app;

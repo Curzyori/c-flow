@@ -17,20 +17,15 @@ const getYesterdayWIBDate = (todayStr) => {
     return yesterday.toISOString().split('T')[0];
 };
 
+// In-memory data storage (resets on serverless cold start)
+let memoryStreakData = { count: 0, lastPlayedDate: null };
+
 const readStreakData = () => {
-    if (!fs.existsSync(DATA_FILE)) {
-        return { count: 0, lastPlayedDate: null };
-    }
-    try {
-        const data = fs.readFileSync(DATA_FILE, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        return { count: 0, lastPlayedDate: null };
-    }
+    return memoryStreakData;
 };
 
 const saveStreakData = (data) => {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+    memoryStreakData = data;
 };
 
 const updateStreak = async () => {
