@@ -3,14 +3,12 @@ import axios from 'axios';
 import { Flame } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const API_BASE_URL = '';
-
 const StreakBadge = () => {
     const [streak, setStreak] = useState(0);
 
     const fetchStreak = async () => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/api/streak`);
+            const response = await axios.get('/api/streak');
             if (response.data.success) {
                 setStreak(response.data.count);
             }

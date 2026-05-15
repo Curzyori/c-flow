@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Play, Pause, SkipForward, SkipBack, Music, Volume2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const API_BASE_URL = '';
-
 const AudioPlayer = () => {
     const [tracks, setTracks] = useState([]);
     const [currentTrack, setCurrentTrack] = useState(null);
@@ -28,7 +26,7 @@ const AudioPlayer = () => {
         const fetchInitialData = async () => {
             try {
                 // Fetch Tracks
-                const trackRes = await axios.get(`${API_BASE_URL}/api/tracks`);
+                const trackRes = await axios.get('/api/tracks');
                 if (trackRes.data.success) {
                     setTracks(trackRes.data.tracks);
                     if (trackRes.data.tracks.length > 0) {
@@ -89,7 +87,7 @@ const AudioPlayer = () => {
         
         // Trigger streak update
         try {
-            await axios.post(`${API_BASE_URL}/api/streak/update`);
+            await axios.post('/api/streak/update');
         } catch (error) {
             console.error('Error updating streak:', error);
         }
@@ -203,7 +201,7 @@ const AudioPlayer = () => {
 
                         <audio 
                             ref={audioRef}
-                            src={currentTrack ? `${API_BASE_URL}${currentTrack.url}` : ''}
+                            src={currentTrack ? currentTrack.url : ''}
                             onTimeUpdate={handleTimeUpdate}
                             onEnded={() => skipTrack('forward')}
                         />
