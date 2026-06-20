@@ -1,6 +1,7 @@
 // backend/services/audioScanner.js
 const fs = require('fs');
 const path = require('path');
+<<<<<<< HEAD
 const mm = require('music-metadata');
 
 const MUSIC_DIR = path.join(process.cwd(), 'frontend/public/music');
@@ -15,6 +16,11 @@ try {
 const scanMusicLibrary = async () => {
     // Hardcoded tracks for Vercel stability
     // These files are located in frontend/public/music/ and served at /music/
+=======
+
+const scanMusicLibrary = async () => {
+    // Using CDN for guaranteed stability on Vercel (v4)
+>>>>>>> origin/vercel
     return [
         {
             id: 'love_me_not',

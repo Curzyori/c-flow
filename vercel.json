@@ -17,7 +17,11 @@
     },
     {
       "source": "/audio/(.*)",
+<<<<<<< HEAD
       "destination": "/audio/$1"
+=======
+      "destination": "/frontend/audio/$1"
+>>>>>>> origin/vercel
     },
     {
       "source": "/(.*)",

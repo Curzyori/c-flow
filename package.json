@@ -1,8 +1,14 @@
 {
   "name": "c-flow",
   "version": "1.0.0",
+<<<<<<< HEAD
   "private": true,
   "scripts": {
     "build": "npm run build --prefix frontend"
+=======
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "start": "node backend/server.js"
+>>>>>>> origin/vercel
   }
 }
