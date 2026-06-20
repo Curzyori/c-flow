@@ -1,94 +1,120 @@
-# 🎧 C Flow
+<p align="center">
+  <img src="images/dashboard1.png" alt="Header Banner" width="100%"/>
+</p>
 
-![C Flow Dashboard](images/dashboard1.png)
+<h1 align="center">C Flow</h1>
+<p align="center">
+  <strong>Premium local audio hub & music visualizer with glassmorphism UI</strong>
+</p>
 
-**C Flow** is a premium, security-first modular audio hub designed for high-performance local music streaming. Built with a modern glassmorphism UI and a robust Node.js backend, it offers a seamless experience for music enthusiasts who value both aesthetics and privacy.
+<p align="center">
+  <a href="https://c-flow.curzy.dev"><strong>🌐 Live Demo Website</strong></a>
+</p>
 
----
+<div align="center">
 
-## 🚀 Key Features
+[![Stars](https://img.shields.io/github/stars/Curzyori/c-flow?style=for-the-badge&color=green)](https://github.com/Curzyori/c-flow/stargazers)
+[![Forks](https://img.shields.io/github/forks/Curzyori/c-flow?style=for-the-badge&color=green)](https://github.com/Curzyori/c-flow/network/members)
+[![License](https://img.shields.io/badge/License-MIT-gold?style=for-the-badge)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Linux-black?style=for-the-badge)](#)
 
-- **Modular Architecture:** Clean separation between Backend (Express) and Frontend (Vite + React).
-- **Audio Hub:** Scans your local `/music` folder and extracts metadata (Artist, Title, Duration) automatically.
-- **Daily Music Streak:** Gamified listening system with WIB (UTC+7) reset logic.
-- **Premium UI:** Sleek glassmorphism design with Neon Green branding and smooth Framer Motion animations.
-- **Security-First:** Centralized Git strategy and strict environment variable management.
+</div>
 
----
-
-## 📸 Preview
-
-![Dashboard Overview](images/dashboard1.png)
-![Music Library](images/dashboard2.png)
-![Visualizer](images/dashboard3.png)
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
-- **Framework:** React 19 (Vite)
-- **Styling:** Tailwind CSS v4 (Curzy Theme)
-- **Animations:** Framer Motion
-- **Icons:** Lucide React
-- **API Client:** Axios
-
-### Backend
-- **Runtime:** Node.js
-- **Framework:** Express.js
-- **Metadata:** music-metadata
-- **Security:** Dotenv, CORS
+<p align="center">
+  <a href="#-why-c-flow">Why This</a> ·
+  <a href="#-key-features">Features</a> ·
+  <a href="#%EF%B8%8F-architecture">Architecture</a> ·
+  <a href="#-quick-start">Quick Start</a> ·
+  <a href="#-preview">Preview</a>
+</p>
 
 ---
 
-## ⚙️ Getting Started
+## 🕒 Why C Flow?
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Curzyori/C-Flow.git
-cd C-Flow
+A premium, modular audio hub designed for local music streaming. By combining a metadata extraction backend with a stunning glassmorphism UI, it provides a highly polished visual dashboard for local MP3 libraries.
+
+|                               |                                                              |
+| ----------------------------- | ------------------------------------------------------------ |
+| 🎵 **Local Audio Scanning**   | Scans folder resources using `music-metadata` to fetch details automatically. |
+| 🔥 **Daily Streak Engine**     | Tracks active listening streaks with WIB (UTC+7) reset rules. |
+| 🧪 **Fluid Visualizer**        | Built-in custom music visualizer aligned with Framer Motion animations. |
+
+---
+
+## 🎯 Key Features
+
+### Audio Hub Mechanics
+
+| Feature | Status | Description |
+| :--- | :---: | :--- |
+| **MP3 Parser** | ✅ | Auto extracts covers, artist names, titles, and track durations. |
+| **Streaks System** | ✅ | WIB-based daily streak tracker writing progress to a local JSON file. |
+| **Stream Engine** | ✅ | Native audio streaming pipeline serving files safely from backend storage. |
+
+### Technical Capabilities
+
+| Capability | Status | Description |
+| :--- | :---: | :--- |
+| **Express Router API** | ✅ | Lightweight Modular REST API logic for status, streak, and music streams. |
+| **Glassmorphism UI** | ✅ | Clean cyberpunk design built using React 19, Tailwind CSS v4, and Lucide. |
+| **Concurrently Dev** | ✅ | Starts development servers concurrently using simple npm triggers. |
+
+---
+
+## 🏗️ Architecture
+
+```text
+c-flow/
+├── backend/
+│   ├── data/
+│   │   └── streak.json    # Local JSON streak record store
+│   ├── controllers/       # Business logic (music parser, streak computation)
+│   ├── routes/            # REST API route endpoints
+│   ├── services/          # AudioScanner scanner & streak background service
+│   └── server.js          # Express server entry point
+└── frontend/
+    ├── src/               # React Vite client SPA bundle
+    └── vite.config.js     # Vite configuration
 ```
 
-### 2. Environment Setup
-```bash
-cp .env.example .env
-```
+---
 
-### 3. Install Dependencies & Start
+## 🚀 Quick Start
 
-#### Backend
+### Installation & Setup
+
 ```bash
+# Clone the repository
+git clone https://github.com/Curzyori/c-flow.git
+cd c-flow
+
+# Setup backend service
 cd backend
 npm install
 npm start
-```
-*Runs on `http://localhost:3004`*
 
-#### Frontend
-```bash
-cd frontend
+# Setup frontend service (in a new terminal)
+cd ../frontend
 npm install
 npm run dev
 ```
-*Runs on `http://localhost:5173`*
 
-### 4. Add Your Music
-Simply drop your `.mp3` files into the root `/music` folder, and the hub will automatically detect them.
-
----
-
-## 🛡 Security Note
-This project uses a root-level `.gitignore` to ensure that:
-- `.env` files are never leaked.
-- Local databases (`*.db`) remain private.
-- Node modules are correctly ignored.
+### Add Your Music
+Drop your `.mp3` files into the root `/music` folder in backend, and the server will automatically scan them.
 
 ---
 
-## 👤 Author
-- **GitHub:** [@Curzyori](https://github.com/Curzyori)
-- **Project:** C Flow Architecture
+## 🖼️ Preview
+
+<p align="center">
+  <img src="images/dashboard1.png" alt="Dashboard View" width="48%"/>
+  <img src="images/dashboard2.png" alt="Library View" width="48%"/>
+</p>
 
 ---
 
-*Built with ❤️ by Curzyori for the music community.*
+## 📄 License
+This project is released under the **MIT License** — free for educational, personal, and research purposes.
+
+<sub>Built with passion as the 4th Project of the 50 Projects Challenge by **@curzyori**</sub>
