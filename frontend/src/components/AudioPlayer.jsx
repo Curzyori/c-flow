@@ -24,13 +24,8 @@ const AudioPlayer = () => {
     useEffect(() => {
         const fetchInitialData = async () => {
             try {
-<<<<<<< HEAD
-                // Fetch Tracks with cache buster
-                const trackRes = await axios.get(`/api/tracks?t=${Date.now()}`);
-=======
                 // Fetch Tracks with v4 cache buster
                 const trackRes = await axios.get(`/api/tracks?v=4&t=${Date.now()}`);
->>>>>>> origin/vercel
                 if (trackRes.data.success) {
                     setTracks(trackRes.data.tracks);
                     if (trackRes.data.tracks.length > 0) {
@@ -169,17 +164,7 @@ const AudioPlayer = () => {
                                 <button onClick={() => skipTrack('forward')} className="p-2 text-white/60 hover:text-white"><SkipForward size={32} /></button>
                             </div>
                         </div>
-<<<<<<< HEAD
-
-                        <audio 
-                            ref={audioRef}
-                            src={currentTrack ? currentTrack.url : ''}
-                            onTimeUpdate={handleTimeUpdate}
-                            onEnded={() => skipTrack('forward')}
-                        />
-=======
                         <audio ref={audioRef} src={currentTrack ? currentTrack.url : ''} onTimeUpdate={handleTimeUpdate} onEnded={() => skipTrack('forward')} />
->>>>>>> origin/vercel
                     </motion.div>
                 </div>
                 <div className="lg:col-span-2">
