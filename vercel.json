@@ -16,8 +16,8 @@
       "destination": "backend/server.js"
     },
     {
-      "source": "/music/(.*)",
-      "destination": "/music/$1"
+      "source": "/audio/(.*)",
+      "destination": "/audio/$1"
     },
     {
       "source": "/(.*)",
